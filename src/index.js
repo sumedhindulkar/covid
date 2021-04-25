@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
 import App from './components/App';
-import DataFetch from "./components/DataFetch"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App/>
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );

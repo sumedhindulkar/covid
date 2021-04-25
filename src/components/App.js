@@ -1,43 +1,19 @@
-import './App.css';
-import axios from "axios"
-import data1, {data2} from "./data"
-import React, {useState, useEffect} from "react";
-function App() {
-  const axios = require('axios')
-    const [stData, setStData] = useState(null)
-    const [value, setValue] = useState(false)
-    useEffect(() => {
-    //   axios.get("https://api.covid19india.org/state_district_wise.json")
-    //     .then(res =>{
-    //         setStData(res.data)
-    //         setValue(true)
-    //     })
-    //     .catch(err =>{
-    //         console.log(err)
-    //     })
-    const fetctData = async (e) =>{
-        const data = await axios.get("https://api.covid19india.org/state_district_wise.json")
-        .catch(err=>{
-            console.log(err);
-        })
-        setStData(data.data)
-        console.log(stData+"      <BR>      "+data)
-    }
-    fetctData();
-    },[])
-console.log(Object.keys(data2))
-console.log(Object.values(data2))
+import React from 'react'
+import {Route, Switch, Link} from "react-router-dom";
+import StateLab from "./labs/StateLab"
+import TrackCases from "./covidTracker/TrackCases";
+import ErrorPage from "./error/ErrorPage"
+import "./App.css"
+
+ function App() {
     return (
         <div>
-            {stData && Object.keys(stData).map((keyName, i)=>{
-                return <h3>{JSON.stringify(keyName)}</h3>
-            })}
-            {/* {Object.keys(data2).map((key, i) =>{
-                return <h2>{JSON.stringify(key)}</h2>
-            })} */}
-            hello
+            <Switch>
+                <Route exact path="/" component={TrackCases} />
+                <Route path="/labs" component={StateLab} />
+                <Route component={ErrorPage}/>
+            </Switch>
         </div>
     )
 }
-
 export default App;
