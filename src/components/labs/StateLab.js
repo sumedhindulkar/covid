@@ -3,8 +3,8 @@ import labData from "./medical"
 function StateL() {
     const [query, setQuery] = useState("Delhi");
     const getQuery = (props) => {
-        console.log(props.target.value)
-        setQuery(props.target.value)
+        console.log(props.target.innerHTML)
+        setQuery(props.target.innerHTML)
     }
     return (
         <div>
