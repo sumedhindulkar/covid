@@ -15,7 +15,7 @@ function Hospital() {
     }, [])
     return (
         <div>
-        <div style={{backgroundColor:"#af3c3c", padding:"100px 0"}}>
+        <div style={{backgroundColor:"#af3c3c", padding:"220px 0"}}>
             <Container className="main-heading" style={{textAlign:"center"}}>
                 <h1>Hospitals with bed Capacity</h1>
                 <input type="text" placeholder="State..."/>

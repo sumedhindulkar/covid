@@ -37,7 +37,7 @@ function TrackCases() {
         }
     return (
         <div className="main">
-        <div style={{backgroundColor:"#af3c3c", padding:"100px 0"}}>
+        <div style={{backgroundColor:"#af3c3c", padding:"220px 0"}}>
             <Container className="main-heading" style={{textAlign:"center"}}>
                 <h1>Let's track covid-19 cases</h1>
                 <input type="text" onChange={alpha} value={query} placeholder="State..."/>
